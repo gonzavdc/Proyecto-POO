@@ -9,6 +9,7 @@ package com.mycompany.proyecto.Vista;
  * @author sebas
  */
 import com.mycompany.proyecto.*;
+import javax.swing.JOptionPane;
 public class NewJFrame extends javax.swing.JFrame {
 
 
@@ -35,6 +36,8 @@ public class NewJFrame extends javax.swing.JFrame {
         txtUsuario = new javax.swing.JTextField();
         lblMensaje = new javax.swing.JLabel();
         btnIniciar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,6 +79,10 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Usuario = \"user\"");
+
+        jLabel2.setText("Contraseña = \"123\"");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -95,7 +102,11 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(16, 16, 16)
                                 .addComponent(btnIniciar)))))
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,13 +114,17 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGap(60, 60, 60)
                 .addComponent(lblMensaje)
                 .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblUser))
-                .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblContraseña)
-                    .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblUser)
+                            .addComponent(jLabel1))
+                        .addGap(12, 12, 12)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblContraseña)
+                            .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel2))
                 .addGap(33, 33, 33)
                 .addComponent(btnIniciar)
                 .addContainerGap(79, Short.MAX_VALUE))
@@ -120,6 +135,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
     private void txtUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyPressed
@@ -132,6 +148,31 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
         // TODO add your handling code here:
+        String usuario = txtUsuario.getText();
+        String password = txtContraseña.getText();
+        
+        
+        if (usuario.equals("") && password.equals(""))
+        {
+            JOptionPane.showMessageDialog(this, "Introduzca usuario y su contraseña");
+        }
+        else if(usuario.equals("") && !(password.equals("")))
+        {
+            JOptionPane.showMessageDialog(this, "Introduzca usuario");
+        }
+        else if(!(usuario.equals("")) && password.equals(""))
+        {
+            JOptionPane.showMessageDialog(this, "Introduzca contraseña");
+        }
+        
+        else if(usuario.equals("user") && password.equals("123"))
+        {
+            Proyecto objetoProyecto = new Proyecto();
+            
+            this.setVisible(false);
+            objetoProyecto.Menu();
+        }
+        
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     private void btnIniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIniciarMouseClicked
@@ -169,13 +210,19 @@ public class NewJFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new NewJFrame().setVisible(true);
+                
+                
             }
+            
+           
         });
         
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIniciar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblContraseña;
     private javax.swing.JLabel lblMensaje;
     private javax.swing.JLabel lblUser;

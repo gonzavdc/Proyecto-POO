@@ -18,7 +18,7 @@ public class Proyecto
 {
 
     //public static void main(String[] args) throws IOException{
-    int opcion;
+    int opcion = -1;
     int empresaCreada;
     Validacion validar = new Validacion();
     Scanner Entrada = new Scanner(System.in);
@@ -227,6 +227,11 @@ public class Proyecto
                         }
                         poblacion = objetoCasa.armarPoblacion();
                         poblacion.modificarCasa(contacto, direccion, contactoNuevo, direccionNueva);
+                        
+                        
+                    case 0:
+                        System.out.println("Proceso terminado");
+                        break;
                     default:
                         System.out.println("Opcion Ingresada no existe");
                         break;

@@ -80,11 +80,11 @@ public class Poblacion{
         System.out.println("No se pudo eliminar el contenedor");
     }
     
-    public void modificarCasa(int contactoActual,String direccionAcutal, int contactoNuevo,String direccionNueva)
+    public void modificarCasa(int contactoActual,String direccionActual, int contactoNuevo,String direccionNueva)
     {
         for(int i = 0;i < Casas.size();i++)
         {
-            if(Casas.get(i).getContacto() == contactoActual && Casas.get(i).getDireccion().equals(direccionAcutal))
+            if(Casas.get(i).getContacto() == contactoActual && Casas.get(i).getDireccion().equals(direccionActual))
             {
                 Casas.get(i).setContacto(contactoNuevo);
                 Casas.get(i).setDireccion(direccionNueva);
