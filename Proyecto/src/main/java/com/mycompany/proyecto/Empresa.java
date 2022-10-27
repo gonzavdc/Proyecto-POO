@@ -22,7 +22,7 @@ public class Empresa extends Contenedor{
     public Empresa(Contenedor contenedores) {
         System.out.println("Ingrese nombre de la empresa");
         Nombre = validar.validarCadena();
-        while (Nombre.equals(null))
+        while (Nombre == (null))
         {
             System.out.println("Ingrese nombre de la empresa");
 
@@ -108,4 +108,14 @@ public class Empresa extends Contenedor{
         }
     }
     
+    /**
+     *
+     */
+    @Override
+    public void verContenedor()
+    {
+        System.out.println("Contenedor de la empresa" + Nombre);
+        System.out.println("Capacidad máxima : "+ super.getCapacidadContenedor());
+        System.out.println("Agua restante : "+ super.getAguaRestante());
+    }
 }

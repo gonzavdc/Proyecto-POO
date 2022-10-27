@@ -52,5 +52,46 @@ public class Poblacion{
         
     }
     
+    public void buscarCasa(int contacto,String direccion)
+    {
+        for (int i= 0; i<Casas.size();i++)
+        {
+            if (Casas.get(i).getContacto() == contacto && Casas.get(i).getDireccion().equals(direccion))
+            {
+                   System.out.println("Casa encontrada");
+                   return;
+            }
+        }
+        System.out.println("Casa no encontrada");
+
+        
+    }
+    
+    public void eliminarCasa(int contacto, String direccion)
+    {
+        for (int i= 0; i<Casas.size();i++)
+        {
+            if (Casas.get(i).getContacto() == contacto && Casas.get(i).getDireccion().equals(direccion))
+            {
+                   Casas.remove(i);
+                   return;
+            }
+        }
+        System.out.println("No se pudo eliminar el contenedor");
+    }
+    
+    public void modificarCasa(int contactoActual,String direccionAcutal, int contactoNuevo,String direccionNueva)
+    {
+        for(int i = 0;i < Casas.size();i++)
+        {
+            if(Casas.get(i).getContacto() == contactoActual && Casas.get(i).getDireccion().equals(direccionAcutal))
+            {
+                Casas.get(i).setContacto(contactoNuevo);
+                Casas.get(i).setDireccion(direccionNueva);
+                return;
+            }
+        }
+    }
+    
     
 }

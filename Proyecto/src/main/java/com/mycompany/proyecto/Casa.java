@@ -14,7 +14,7 @@ public class Casa{
     private int cantHabitantes;
     private double consumoMaximo;
     private int necesitaContenedor;
-    private String Contacto;
+    private int Contacto;
     private String Direccion;
     private Contenedor contenedorCasa;
             
@@ -31,30 +31,35 @@ public class Casa{
         this.cantHabitantes = validar.validarEntero();
         while(cantHabitantes < 1)
         {
+            System.out.println("Ingrese cantidad de habitantes de la casa, debe ser mayor a 0");
             this.cantHabitantes = validar.validarEntero();
         }
         System.out.println("Ingrese consumo máximo del hogar");
         this.consumoMaximo = validar.validarDouble();
         while(consumoMaximo < 1)
         {
+            System.out.println("Ingrese consumo máximo del hogar, debe ser mayor a 1 y con punto");
             this.consumoMaximo = validar.validarDouble();
         }
         System.out.println("Ingrese 1 si necesita contenedor, 0 en caso contrario");
         this.necesitaContenedor = validar.validarEntero();
         while(necesitaContenedor < 1)
         {
+            System.out.println("Ingrese 1 si necesita contenedor, 0 en caso contrario");
             this.necesitaContenedor = validar.validarEntero();
         }
         System.out.println("Ingrese número de contacto");
-        this.Contacto = validar.validarCadena();
-        while(Contacto.equals(null))
+        this.Contacto = validar.validarEntero();
+        while(Contacto < 1)
         {
-            this.Contacto = validar.validarCadena();
+            System.out.println("Ingrese número de contacto");
+            this.Contacto = validar.validarEntero();
         }
         System.out.println("Ingrese dirección");
         this.Direccion = validar.validarCadena();
-        while(Direccion.equals(null))
+        while(Direccion == (null))
         {
+            System.out.println("Ingrese número de contacto");
             this.Direccion = validar.validarCadena();
         }
         this.contenedorCasa = contenedorCasa;
@@ -68,25 +73,29 @@ public class Casa{
         this.cantHabitantes = validar.validarEntero();
         while(cantHabitantes < 1)
         {
+            System.out.println("Ingrese cantidad de habitantes de la casa");
             this.cantHabitantes = validar.validarEntero();
         }
         System.out.println("Ingrese consumo máximo del hogar");
         this.consumoMaximo = validar.validarDouble();
         while(consumoMaximo < 1)
         {
+            System.out.println("Ingrese consumo máximo del hogar");
             this.consumoMaximo = validar.validarDouble();
         }
         System.out.println("Ingrese 1 si necesita contenedor, 0 en caso contrario");
         this.necesitaContenedor = validar.validarEntero();
         while(necesitaContenedor < 1)
         {
+            System.out.println("Ingrese 1 si necesita contenedor, 0 en caso contrario");
             this.necesitaContenedor = validar.validarEntero();
         }
         System.out.println("Ingrese número de contacto");
-        this.Contacto = validar.validarCadena();
-        while(Contacto.equals(null))
+        this.Contacto = validar.validarEntero();
+        while(Contacto < 1)
         {
-            this.Contacto = validar.validarCadena();
+            System.out.println("Ingrese número de contacto");
+            this.Contacto = validar.validarEntero();
         }
         
         
@@ -104,11 +113,11 @@ public class Casa{
         return consumoMaximo;
     }
 
-    public int isNecesitaContenedor() {
+    public int getNecesitaContenedor() {
         return necesitaContenedor;
     }
 
-    public String getContacto() {
+    public int getContacto() {
         return Contacto;
     }
 
@@ -132,7 +141,7 @@ public class Casa{
         this.necesitaContenedor = necesitaContenedor;
     }
 
-    public void setContacto(String Contacto) {
+    public void setContacto(int Contacto) {
         this.Contacto = Contacto;
     }
 
@@ -171,6 +180,13 @@ public class Casa{
         poblacionAux.setCasas(ColeccionCasas);
         
         return poblacionAux;
+    }
+    
+    public void necesitaRecarga()
+    {
+        System.out.println("¿Necesita un nuevo contenedor? "+ necesitaContenedor);
+        System.out.println("Dirección :" + Direccion);
+        System.out.println("Contacto :" + Contacto);
     }
     
     

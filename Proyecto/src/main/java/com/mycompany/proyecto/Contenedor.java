@@ -45,16 +45,18 @@ public class Contenedor extends Casa{
     
     public Contenedor() {
         
-        System.out.println("Ingrese la capacidad máxima del contenedor");
+        System.out.println("Ingrese la capacidad máxima del contenedor, debe ser mayor a 1");
         this.capacidadContenedor = validar.validarDouble();
         while (capacidadContenedor < 1)
         {
+            System.out.println("Ingrese la capacidad máxima del contenedor, debe ser mayor a 1");
             this.capacidadContenedor = validar.validarDouble();
         }
         System.out.println("Ingrese el agua restante en el contenedor");
         this.AguaRestante = validar.validarDouble();
         while (AguaRestante < 1)
         {
+            System.out.println("Ingrese el agua restante en el contenedor, debe ser mayor a 1");
             this.AguaRestante = validar.validarDouble();
         }
         this.limiteBajoNivel = (this.capacidadContenedor * 0.20);
@@ -67,6 +69,7 @@ public class Contenedor extends Casa{
         this.AguaRestante = validar.validarDouble();
         while (AguaRestante < 1)
         {
+            System.out.println("Ingrese el agua restante en el contenedor, debe ser mayor a 1");
             this.AguaRestante = validar.validarDouble();
         }
         this.limiteBajoNivel = (this.capacidadContenedor * 0.20);
@@ -78,4 +81,15 @@ public class Contenedor extends Casa{
         System.out.println("Agua restante : "+ this.AguaRestante);
     }
     
+
+    public void necesitaRecarga()
+    {
+        
+        System.out.println("Dirección :" + super.getDireccion());
+        System.out.println("Contacto :" + super.getContacto());
+        System.out.println("Datos contenedor : ");
+        System.out.println("Límite bajo nivel de agua :" + limiteBajoNivel);
+        System.out.println("Capacidad del contenedor :" + capacidadContenedor);
+        System.out.println("Agua restante :" + AguaRestante);
+    }
 }
