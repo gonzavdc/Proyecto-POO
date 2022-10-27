@@ -23,16 +23,19 @@ public class Proyecto
     Validacion validar = new Validacion();
     Scanner Entrada = new Scanner(System.in);
 
+    
+    // Getters
     public int getOpcion() {
         return opcion;
     }
-
-    public void setOpcion(int opcion) {
-        this.opcion = opcion;
-    }
-
+    
     public int getEmpresaCreada() {
         return empresaCreada;
+    }
+
+    // Setters
+    public void setOpcion(int opcion) {
+        this.opcion = opcion;
     }
 
     public void setEmpresaCreada(int empresaCreada) {
@@ -40,7 +43,17 @@ public class Proyecto
     }
 
     
-    
+    /*
+    La función menu es para poder realizar las acciones creadas en las clases
+    según un case switch, dentro de las 6 opciones el usuario 
+    selecciona la que desea ejecutar. En caso de seleccionar 0 el proceso se termina,
+    y al seleccionar cualquier otro numero, se indica que la opción no es valida.
+    Al ser un ciclo while, se podran ejecutar tantas opciones como se desee, 
+    hasta ingresar un 0.
+    Dentro de las opciones 1 y 4 tambien se encuentra disponible 
+    la escritura de un archivo txt, le cual almacena los datos creados en
+    un archivo de texto.
+    */
     public void Menu()
     {
         while(opcion != 0)
@@ -52,6 +65,7 @@ public class Proyecto
             System.out.println("Ingrese 5 si desea buscar una casa");
             System.out.println("Ingrese 6 si desea el eliminar el contenedor de una casa");
             System.out.println("Ingrese 0 para terminar el proceso");
+            
             opcion = validar.validarEntero();
             while(opcion < 0)
             {

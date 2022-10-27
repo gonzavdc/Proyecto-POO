@@ -14,18 +14,19 @@ public class Poblacion{
     private int cantCasas;
     private ArrayList<Casa> Casas;
 
+    
+    // Constructor vacío
     public Poblacion() {
     }
 
+    //Constructor Población
     public Poblacion(int cantCasas, ArrayList<Casa> Casas) {
         this.cantCasas = cantCasas;
         this.Casas = Casas;
     }
 
     
-    
-
-    
+    // Getters
     public int getCantCasas() {
         return cantCasas;
     }
@@ -34,6 +35,7 @@ public class Poblacion{
         return Casas;
     }
 
+    // Setters
     public void setCantCasas(int cantCasas) {
         this.cantCasas = cantCasas;
     }
@@ -43,6 +45,7 @@ public class Poblacion{
     }
     
     
+    // Función que muestra cada casa que posee una población
     public void verPoblacion(ArrayList<Casa> ColeccionCasas)
     {
         for(int i= 0;i<ColeccionCasas.size();i++)
@@ -52,6 +55,12 @@ public class Poblacion{
         
     }
     
+    /*
+    Función de busqueda de una casa dentro del array de casas
+    Si el contacto y la dirección ingresada coincide con la información
+    de una de las casas del array, hace un return para "cortar" la función
+    Si no la encuentra, imprime el mensaje correspondiente
+    */
     public void buscarCasa(int contacto,String direccion)
     {
         for (int i= 0; i<Casas.size();i++)
@@ -67,6 +76,11 @@ public class Poblacion{
         
     }
     
+    /*
+    Función similar a buscarCasa, pero cuando encuentra una coincidencia
+    según los parametros enciados, la elimina del array y hace un return.
+    En caso contrario, indica que la casa no se puedo eliminar.
+    */
     public void eliminarCasa(int contacto, String direccion)
     {
         for (int i= 0; i<Casas.size();i++)
@@ -77,9 +91,14 @@ public class Poblacion{
                    return;
             }
         }
-        System.out.println("No se pudo eliminar el contenedor");
+        System.out.println("No se pudo eliminar la casa");
     }
     
+    /*
+    Hace la busqueda de la casa que se desea modificar, al encontrarla
+    se realizan los setters para cambiar la información con la nueva
+    enviada por parametros.
+    */
     public void modificarCasa(int contactoActual,String direccionActual, int contactoNuevo,String direccionNueva)
     {
         for(int i = 0;i < Casas.size();i++)

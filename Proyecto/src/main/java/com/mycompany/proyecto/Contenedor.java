@@ -17,8 +17,8 @@ public class Contenedor extends Casa{
     
     Validacion validar = new Validacion();
     
-    
-
+   
+    // Getters
     public double getLimiteBajoNivel() {
         return limiteBajoNivel;
     }
@@ -31,6 +31,7 @@ public class Contenedor extends Casa{
         return AguaRestante;
     }
 
+    //Setters 
     public void setLimiteBajoNivel(double limiteBajoNivel) {
         this.limiteBajoNivel = limiteBajoNivel;
     }
@@ -43,6 +44,7 @@ public class Contenedor extends Casa{
         this.AguaRestante = AguaRestante;
     }
     
+    // constructor de contenedor
     public Contenedor() {
         
         System.out.println("Ingrese la capacidad máxima del contenedor, debe ser mayor a 1");
@@ -62,6 +64,8 @@ public class Contenedor extends Casa{
         this.limiteBajoNivel = (this.capacidadContenedor * 0.20);
     }
     
+    /* Constructor de contener con sobrecarga, 
+    recibiendo capacidadMaxima como nuevo parametro */
     public Contenedor(double capacidadMaxima)
     {
         this.capacidadContenedor = capacidadMaxima;
@@ -74,6 +78,8 @@ public class Contenedor extends Casa{
         }
         this.limiteBajoNivel = (this.capacidadContenedor * 0.20);
     }
+    
+    // Muestra el contenido del contenedor
     public void verContenedor()
     {
         System.out.println("Contenedor");
@@ -82,6 +88,10 @@ public class Contenedor extends Casa{
     }
     
 
+    /*
+    Versión sobreescrita de necesitaRecarga en la clase Casa
+    En esta versión también se muestran los datos del contenedor de agua 
+    */
     public void necesitaRecarga()
     {
         

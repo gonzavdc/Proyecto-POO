@@ -19,6 +19,7 @@ public class Empresa extends Contenedor{
     Validacion validar = new Validacion();
     Scanner Entrada = new Scanner(System.in);
   
+    // Constructor de empresa
     public Empresa(Contenedor contenedores) {
         System.out.println("Ingrese nombre de la empresa");
         Nombre = validar.validarCadena();
@@ -38,29 +39,15 @@ public class Empresa extends Contenedor{
         }
                
         this.ColeccionContenedor = crearContenedores();
-        
-        
+ 
     }
 
-    
 
+    // Getters
     public ArrayList<Contenedor> getColeccionContenedor() {
         return ColeccionContenedor;
     }
 
-    
-
-    public void setColeccionContenedor(ArrayList<Contenedor> ColeccionContenedor) {
-        ColeccionContenedor = ColeccionContenedor;
-    }
-
-    
-
-    
-
-    
-
-    
     public Contenedor getContenedores() {
         return contenedores;
     }
@@ -73,6 +60,7 @@ public class Empresa extends Contenedor{
         return Nombre;
     }
 
+    // Setters
     public void setContenedores(Contenedor contenedores) {
         this.contenedores = contenedores;
     }
@@ -85,6 +73,15 @@ public class Empresa extends Contenedor{
         this.Nombre = Nombre;
     }
     
+    public void setColeccionContenedor(ArrayList<Contenedor> ColeccionContenedor) {
+        ColeccionContenedor = ColeccionContenedor;
+    }
+    
+    
+    /* 
+    Función que arma los contenedores que almacenara una empresa, 
+    y los guarda en un array (de contenedores) 
+    */
     public ArrayList<Contenedor> crearContenedores()
     {
         ArrayList<Contenedor> array = new ArrayList();
@@ -98,6 +95,10 @@ public class Empresa extends Contenedor{
         return array;
     }
     
+    /*
+    Función que muestra la información de la empresa, su nombre,
+    y la información de cada contenedor que posee
+    */
     public void verEmpresa()
     {
         System.out.println("Nombre empresa"+ Nombre);
@@ -107,10 +108,13 @@ public class Empresa extends Contenedor{
             ColeccionContenedor.get(i).verContenedor();
         }
     }
+
     
-    /**
-     *
-     */
+    /*
+    Función sobreescrita de para mostrar un contenedor, agregando
+    el nommbre de la empresa
+    */
+    
     @Override
     public void verContenedor()
     {

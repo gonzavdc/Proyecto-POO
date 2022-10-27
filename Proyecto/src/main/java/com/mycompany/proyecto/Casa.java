@@ -23,7 +23,8 @@ public class Casa{
     {
         
     }
-  
+    
+    // Constructor casa
     public Casa(Contenedor contenedorCasa) {
         Scanner Entrada = new Scanner(System.in);
         
@@ -65,6 +66,7 @@ public class Casa{
         this.contenedorCasa = contenedorCasa;
     }
     
+    // Constructor casa con sobrecarga, recibiendo nuevo parametro dirección
     public Casa(Contenedor contenedorCasa, String direccion)
     {
         Scanner Entrada = new Scanner(System.in);
@@ -104,7 +106,7 @@ public class Casa{
     }
 
     
-
+    // Getters
     public int getCantHabitantes() {
         return cantHabitantes;
     }
@@ -129,6 +131,7 @@ public class Casa{
         return contenedorCasa;
     }
 
+    // Setters 
     public void setCantHabitantes(int cantHabitantes) {
         this.cantHabitantes = cantHabitantes;
     }
@@ -154,6 +157,15 @@ public class Casa{
     }
     
     
+    /*
+    Se crea un arreglo tipo Casa el cual va a almacenar las
+    la cantidad de casas establecidas desde la consola
+    Al asignarle a una casa auxiliar todos los datos necesarios,
+    esta se agrega al array Coleccion Casas, repitiendose la cantidad
+    de casas ingresadas por consola.
+    Luego retornamos la población auxiliar, que será quien contenga
+    la colección completa de nuestras casas.
+    */
     public Poblacion armarPoblacion()
     {
         Poblacion poblacionAux = new Poblacion();
@@ -182,6 +194,11 @@ public class Casa{
         return poblacionAux;
     }
     
+    /*
+    Función que se encarga de preguntar si es que se necesita una
+    recarga el contenedor de agua, se indica la dirección de la casa 
+    que necesite la recarga y el contacto de la persona
+    */
     public void necesitaRecarga()
     {
         System.out.println("¿Necesita un nuevo contenedor? "+ necesitaContenedor);

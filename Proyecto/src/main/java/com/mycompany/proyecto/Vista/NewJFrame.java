@@ -152,19 +152,37 @@ public class NewJFrame extends javax.swing.JFrame {
         String password = txtContraseña.getText();
         
         
+        /*
+        Mensaje que se muestra cuando se presiona el boton de ingresar,
+        pero los campos de usuario y contraseña se dejan vacíos
+        */
         if (usuario.equals("") && password.equals(""))
         {
             JOptionPane.showMessageDialog(this, "Introduzca usuario y su contraseña");
         }
+        
+        /*
+        Mensaje que se muestra cuando se presiona el boton de ingresar,
+        pero el campo de usuario se deja vacío
+        */
         else if(usuario.equals("") && !(password.equals("")))
         {
             JOptionPane.showMessageDialog(this, "Introduzca usuario");
         }
+        
+        /*
+        Mensaje que se muestra cuando se presiona el boton de ingresar,
+        pero el campo de  contraseña se deja vacío
+        */
         else if(!(usuario.equals("")) && password.equals(""))
         {
             JOptionPane.showMessageDialog(this, "Introduzca contraseña");
         }
         
+        /*
+        Cuando se introduce correctamente el usuario (user) y la contraseña (123)
+        Se oculta la pestaña de ingreso y se ejecuta el menu de opciones.
+        */
         else if(usuario.equals("user") && password.equals("123"))
         {
             Proyecto objetoProyecto = new Proyecto();

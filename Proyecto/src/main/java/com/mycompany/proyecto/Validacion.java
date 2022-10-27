@@ -18,7 +18,6 @@ public class Validacion {
     public int validarEntero()
     {
         
-        
         try
         {
             String entero = Entrada.next();
@@ -39,7 +38,6 @@ public class Validacion {
     public String validarCadena()
     {
         
-        
         try
         {
             String cadena = Entrada.next();
@@ -59,8 +57,7 @@ public class Validacion {
     }
     public double validarDouble()
     {
-        
-        
+    
         try
         {
             String decimal = Entrada.next();
@@ -71,7 +68,6 @@ public class Validacion {
             else {
                 System.out.println("Dato invalido, vuelva a ingresarlo");
             }
-            
             
         }catch(Exception e){
             System.out.println("Este dato no es válido"); 
